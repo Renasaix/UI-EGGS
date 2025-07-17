@@ -1,67 +1,62 @@
--- Create UI
 local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "ZyferionHubUI"
+local Frame = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local RandomizeButton = Instance.new("TextButton")
+local HideButton = Instance.new("TextButton")
+
+-- UI Parent
+ScreenGui.Name = "ZyferionHub"
 ScreenGui.ResetOnSpawn = false
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
 
--- Main Frame
-local MainFrame = Instance.new("Frame")
-MainFrame.Size = UDim2.new(0, 250, 0, 150)
-MainFrame.Position = UDim2.new(0, 10, 0.5, -75)
-MainFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-MainFrame.BorderSizePixel = 0
-MainFrame.Parent = ScreenGui
-
--- UI Corner
-local UICorner = Instance.new("UICorner")
-UICorner.CornerRadius = UDim.new(0, 8)
-UICorner.Parent = MainFrame
+-- Frame
+Frame.Name = "MainFrame"
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.05, 0, 0.3, 0)
+Frame.Size = UDim2.new(0, 240, 0, 150)
+Frame.Active = true
+Frame.Draggable = true
 
 -- Title
-local Title = Instance.new("TextLabel")
+Title.Name = "Title"
+Title.Parent = Frame
+Title.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 Title.Size = UDim2.new(1, 0, 0, 30)
-Title.BackgroundTransparency = 1
-Title.Text = "Zyferion Hub - Grow A Garden ESP"
-Title.TextColor3 = Color3.fromRGB(255, 0, 0)
-Title.TextScaled = true
 Title.Font = Enum.Font.GothamBold
-Title.Parent = MainFrame
+Title.Text = "Zyferion Hub - Grow A Garden ESP"
+Title.TextColor3 = Color3.fromRGB(255, 60, 60)
+Title.TextScaled = true
+Title.BorderSizePixel = 0
 
 -- Randomize ESP Button
-local RandomizeButton = Instance.new("TextButton")
-RandomizeButton.Size = UDim2.new(0.9, 0, 0, 40)
-RandomizeButton.Position = UDim2.new(0.05, 0, 0, 40)
+RandomizeButton.Name = "RandomizeESP"
+RandomizeButton.Parent = Frame
 RandomizeButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+RandomizeButton.Position = UDim2.new(0.1, 0, 0.4, 0)
+RandomizeButton.Size = UDim2.new(0.8, 0, 0, 30)
+RandomizeButton.Font = Enum.Font.Gotham
 RandomizeButton.Text = "🔍 Randomize ESP"
-RandomizeButton.TextColor3 = Color3.new(1, 1, 1)
+RandomizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 RandomizeButton.TextScaled = true
-RandomizeButton.Font = Enum.Font.GothamBold
-RandomizeButton.Parent = MainFrame
 
 -- Hide ESP Button
-local HideButton = Instance.new("TextButton")
-HideButton.Size = UDim2.new(0.9, 0, 0, 40)
-HideButton.Position = UDim2.new(0.05, 0, 0, 90)
+HideButton.Name = "HideESP"
+HideButton.Parent = Frame
 HideButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+HideButton.Position = UDim2.new(0.1, 0, 0.7, 0)
+HideButton.Size = UDim2.new(0.8, 0, 0, 30)
+HideButton.Font = Enum.Font.Gotham
 HideButton.Text = "🙈 Hide ESP"
-HideButton.TextColor3 = Color3.new(1, 1, 1)
+HideButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 HideButton.TextScaled = true
-HideButton.Font = Enum.Font.GothamBold
-HideButton.Parent = MainFrame
 
--- ESP functionality placeholder
-local function toggleESP(enabled)
-    for _, gui in pairs(workspace:GetDescendants()) do
-        if gui:IsA("BillboardGui") and gui.Name == "PetESP" then
-            gui.Enabled = enabled
-        end
-    end
-end
-
+-- Button functionality placeholder
 RandomizeButton.MouseButton1Click:Connect(function()
-    toggleESP(true)
+    print("🔍 Randomize ESP Clicked")
 end)
 
 HideButton.MouseButton1Click:Connect(function()
-    toggleESP(false)
+    print("🙈 Hide ESP Clicked")
 end)
