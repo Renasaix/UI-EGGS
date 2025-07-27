@@ -524,8 +524,12 @@ mutationBtn.MouseButton1Click:Connect(function()
 
 end)
 
-local b4, b5, b6 = "i", "z", "z"
-local c1 = "z"
+local a1, a2, a3 = "M", "a", "d"
+local a4, a5, a6 = "e", " ", "b"
+local a7, a8, a9 = "y", " ", "Z"
+local b1, b2, b3 = "y", "f", "e"
+local b4, b5, b6 = "r", "i", "o"
+local c1 = "n"
 
 local credit = Instance.new("TextLabel", frame)
 credit.Size = UDim2.new(1, 0, 0, 20)
@@ -535,3 +539,5 @@ credit.Font = Enum.Font.FredokaOne
 credit.TextSize = 14
 credit.TextColor3 = Color3.fromRGB(200, 200, 200)
 credit.Text = a1..a2..a3..a4..a5..a6..a7..a8..a9..b1..b2..b3..b4..b5..b6..c1
+
+
